@@ -1,10 +1,10 @@
 <h1>My Goals</h1>
-<hr>
+<hr />
 <ul>
-    <div *ngFor='let goal of goals;let i = index'>
-        <li>{{goal.name}}</li>
-        <button (click)='toggleDetails(i)'>Toggle Details</button>
-        <app-goal-detail *ngIf='goal.showDescription' [goal]='goal' (isComplete)='completeGoal($event,i)'></app-goal-detail>
+    <div *ngFor="let goal of goals; let i = index">
+        <li appStrikethrough>{{ goal.name }}</li>
+        <button (click)="toggleDetails(i)">Toggle Details</button>
+        <app-goal-detail *ngIf="goal.showDescription" [goal]="goal" (isComplete)="completeGoal($event, i)"></app-goal-detail>
     </div>
 </ul>
-<p *ngIf='goals.length > 10'>You have too many goals</p>
+<p *ngIf="goals.length > 10">You have too many goals</p>
